@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <button id="update" onclick=updatecart()>購物車總額</button>
+    <button onclick="
+    totalprice = 0;
+    console.log('已清空購物車');
+    console.log(totalprice);
+    ">清空購物車</button><br>
+
+    <img src="1.png">
+    <p>100$</p>
+    <button onclick="priceadd">加入購物車</button>
+    <br>
+    <img src="2.png">
+    <p>120$</p>
+    <button onclick="priceadd2">加入購物車</button>
+    </div>
+    <script>
+        let totalprice=0;
+        function priceadd(){
+            totalprice=totalprice+100;
+            localStorage.setItem('price',totalprice);
+            Price=localStorage.getItem('price');
+            console.log(totalprice);
+        }
+        function priceadd2(){
+            totalprice=totalprice+100;
+            localStorage.setItem('price',totalprice);
+            Price=localStorage.getItem('price');
+            console.log(totalprice);
+        }
+        function updatecart(){
+            localStorage.setItem('price',totalprice);
+            Price=localStorage.getItem('price');
+            document.querySelector('#update').innerHTML='購物車金額 : ${totalprice}'
+        }
+        updatecart();
+    </script>
+</body>
+</html>
